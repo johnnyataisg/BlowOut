@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Instrument";
+}
+
+<h2>Instrument</h2>
+<a href=@Url.Action("New", "Rentals")>New</a>
+<a href=@Url.Action("Used", "Rentals")>Used</a>
+<div>
+    <img src=@Html.Raw((String)ViewBag.Logo) />
+    @Html.Raw((String)ViewBag.Output)
+</div>
