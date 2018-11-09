@@ -65,7 +65,7 @@ namespace BlowOut.Controllers
             ViewBag.Output += "<div>";
             ViewBag.Logo += instrument.ImageURL;
             ViewBag.Output += "<h3>" + instrument.Name + "</h3>";
-            ViewBag.Output += "<h3>Price: $" + instrument.Price + "</h3>";
+            ViewBag.Output += "<h3>Price: $" + instrument.Price + "/month</h3>";
             ViewBag.Output += "</div>";
             return View();
         }
@@ -76,7 +76,7 @@ namespace BlowOut.Controllers
             ViewBag.Output += "<div>";
             ViewBag.Logo += instrument.ImageURL;
             ViewBag.Output += "<h3>" + instrument.Name + "</h3>";
-            ViewBag.Output += "<h3>Price: $" + instrument.Price + "</h3>";
+            ViewBag.Output += "<h3>Price: $" + instrument.Price + "/month</h3>";
             ViewBag.Output += "</div>";
             return View("Instrument");
         }
@@ -87,7 +87,7 @@ namespace BlowOut.Controllers
             ViewBag.Output += "<div>";
             ViewBag.Logo += instrument.ImageURL;
             ViewBag.Output += "<h3>" + instrument.Name + "</h3>";
-            ViewBag.Output += "<h3>Price: $" + instrument.Price + "</h3>";
+            ViewBag.Output += "<h3>Price: $" + instrument.Price + "/month</h3>";
             ViewBag.Output += "</div>";
             return View("Instrument");
         }
