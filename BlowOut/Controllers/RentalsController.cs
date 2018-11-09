@@ -22,50 +22,50 @@ namespace BlowOut.Controllers
             if (value == "Trumpet")
             {
                 instrument.Name = "Trumpet";
-                instrument.ImageURL = "~/Content/trumpet.jpg";
+                instrument.ImageURL = "../Content/trumpet.jpg";
                 instrument.NewPrice = 55;
                 instrument.UsedPrice = 25;
             }
             else if (value == "Trombone")
             {
                 instrument.Name = "Trombone";
-                instrument.ImageURL = "~/Content/trumpet.jpg";
+                instrument.ImageURL = "../Content/trombone.jpg";
                 instrument.NewPrice = 60;
                 instrument.UsedPrice = 35;
             }
             else if (value == "Tuba")
             {
                 instrument.Name = "Tuba";
-                instrument.ImageURL = "~/Content/trumpet.jpg";
+                instrument.ImageURL = "../Content/tuba.jpg";
                 instrument.NewPrice = 70;
                 instrument.UsedPrice = 50;
             }
             else if (value == "Flute")
             {
                 instrument.Name = "Flute";
-                instrument.ImageURL = "~/Content/trumpet.jpg";
+                instrument.ImageURL = "../Content/flute.jpg";
                 instrument.NewPrice = 40;
                 instrument.UsedPrice = 25;
             }
             else if (value == "Clarinet")
             {
                 instrument.Name = "Clarinet";
-                instrument.ImageURL = "~/Content/trumpet.jpg";
+                instrument.ImageURL = "../Content/clarinet.jpg";
                 instrument.NewPrice = 35;
                 instrument.UsedPrice = 27;
             }
             else
             {
                 instrument.Name = "Saxophone";
-                instrument.ImageURL = "~/Content/trumpet.jpg";
+                instrument.ImageURL = "../Content/saxophone.jpg";
                 instrument.NewPrice = 42;
                 instrument.UsedPrice = 30;
             }
             instrument.Price = instrument.NewPrice;
             ViewBag.Output += "<div>";
             ViewBag.Logo += instrument.ImageURL;
-            ViewBag.Output += "<p>" + instrument.Name + "</p>";
-            ViewBag.Output += "<p>" + instrument.Price + "</p>";
+            ViewBag.Output += "<h3>" + instrument.Name + "</h3>";
+            ViewBag.Output += "<h3>Price: $" + instrument.Price + "</h3>";
             ViewBag.Output += "</div>";
             return View();
         }
@@ -74,9 +74,9 @@ namespace BlowOut.Controllers
         {
             instrument.Price = instrument.NewPrice;
             ViewBag.Output += "<div>";
-            ViewBag.Output += "<img " + "src=\"" + instrument.ImageURL + "\">";
-            ViewBag.Output += "<p>" + instrument.Name + "</p>";
-            ViewBag.Output += "<p>" + instrument.Price + "</p>";
+            ViewBag.Logo += instrument.ImageURL;
+            ViewBag.Output += "<h3>" + instrument.Name + "</h3>";
+            ViewBag.Output += "<h3>Price: $" + instrument.Price + "</h3>";
             ViewBag.Output += "</div>";
             return View("Instrument");
         }
@@ -85,9 +85,9 @@ namespace BlowOut.Controllers
         {
             instrument.Price = instrument.UsedPrice;
             ViewBag.Output += "<div>";
-            ViewBag.Output += "<img " + "src=\"" + instrument.ImageURL + "\">";
-            ViewBag.Output += "<p>" + instrument.Name + "</p>";
-            ViewBag.Output += "<p>" + instrument.Price + "</p>";
+            ViewBag.Logo += instrument.ImageURL;
+            ViewBag.Output += "<h3>" + instrument.Name + "</h3>";
+            ViewBag.Output += "<h3>Price: $" + instrument.Price + "</h3>";
             ViewBag.Output += "</div>";
             return View("Instrument");
         }
