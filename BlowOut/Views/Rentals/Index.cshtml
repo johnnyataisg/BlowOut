@@ -26,7 +26,13 @@
 <body>
     <!-- Projects Section -->
     <section id="projects" class="projects-section bg-light">
+        <div style="margin-bottom: 50px;">
+            <h1 style="text-align: center;">Instrument Rentals</h1>
+        </div>
         <div class="container">
+            <div style="margin-bottom: 30px;">
+                <p>Once 18 months has been achieved, you own the instrument. If returned at any time before 3 months there will be a $200 re-stocking fee. If returned after 3 months any equity in the instrument is forfeited.</p>
+            </div>
             <!-- Featured Project Row -->
             <div class="row align-items-center no-gutters mb-4 mb-lg-5">
                 <div class="col-xl-8 col-lg-7">
@@ -45,7 +51,7 @@
             <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
                 <div class="col-lg-6">
                     <a href=@Url.Action("Instrument", "Rentals", new { value = "Flute" })>
-                        <img style="min-width: 100%;" class="img-fluid" src="~/Content/flute.jpg" alt="">
+                        <img style="min-width: 100%;"class="img-fluid" src="~/Content/flute.jpg" alt="">
                     </a>
                 </div>
                 <div class="col-lg-6">
@@ -83,7 +89,7 @@
             <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
                 <div class="col-lg-6">
                     <a href=@Url.Action("Instrument", "Rentals", new { value = "Trombone" })>
-                        <img style="min-width: 100%;" class="img-fluid" src="~/Content/trombone.jpg" alt="">
+                        <img class="img-fluid" src="~/Content/trombone.jpg" alt="">
                     </a>
                 </div>
                 <div class="col-lg-6">

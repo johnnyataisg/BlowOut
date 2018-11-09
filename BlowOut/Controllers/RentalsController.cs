@@ -63,7 +63,7 @@ namespace BlowOut.Controllers
             }
             instrument.Price = instrument.NewPrice;
             ViewBag.Output += "<div>";
-            ViewBag.Logo = instrument.ImageURL;
+            ViewBag.Logo += instrument.ImageURL;
             ViewBag.Output += "<h3>" + instrument.Name + "</h3>";
             ViewBag.Output += "<h3>Price: $" + instrument.Price + "</h3>";
             ViewBag.Output += "</div>";
@@ -74,7 +74,7 @@ namespace BlowOut.Controllers
         {
             instrument.Price = instrument.NewPrice;
             ViewBag.Output += "<div>";
-            ViewBag.Logo = instrument.ImageURL;
+            ViewBag.Logo += instrument.ImageURL;
             ViewBag.Output += "<h3>" + instrument.Name + "</h3>";
             ViewBag.Output += "<h3>Price: $" + instrument.Price + "</h3>";
             ViewBag.Output += "</div>";
@@ -85,7 +85,7 @@ namespace BlowOut.Controllers
         {
             instrument.Price = instrument.UsedPrice;
             ViewBag.Output += "<div>";
-            ViewBag.Logo = instrument.ImageURL;
+            ViewBag.Logo += instrument.ImageURL;
             ViewBag.Output += "<h3>" + instrument.Name + "</h3>";
             ViewBag.Output += "<h3>Price: $" + instrument.Price + "</h3>";
             ViewBag.Output += "</div>";
