@@ -21,65 +21,96 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="~/Content/css/grayscale.min.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
-    <title>Rentals</title>
 </head>
 <body>
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section bg-light">
-        <div style="margin-bottom: 50px;">
-            <h1 style="text-align: center;">Instrument Rentals</h1>
-        </div>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
-            <div style="margin-bottom: 30px;">
-                <p>Once 18 months has been achieved, you own the instrument. If returned at any time before 3 months there will be a $200 re-stocking fee. If returned after 3 months any equity in the instrument is forfeited.</p>
+            <a class="navbar-brand js-scroll-trigger" href=@Url.Action("Index", "Home")>BlowOut Musical Instrument Rentals</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href=@Url.Action("Index", "Rentals")>Rentals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href=@Url.Action("About", "Home")>About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href=@Url.Action("Index", "Contact")>Contact</a>
+                    </li>
+                </ul>
             </div>
-            @for (int i = 0; i < Model.Count(); i++)
-            {
-                if (i % 2 == 0)
+        </div>
+    </nav>
+    <!-- Projects Section -->
+    <section class="rental-style" style="background-image: url(../Content/DF3BBFBAC0EB418EAA55B39BBDE6691D_12073_2787x2296_b0d03a194b23e7cf85e62e1a36a7c1ab.jpg); background-size: contain; background-repeat: repeat;">
+        <div class="rental-background" style="padding-top: 10%;">
+            <div style="margin-bottom: 50px;">
+                <h1 style="text-align: center;">Instrument Rentals</h1>
+            </div>
+            <div class="container">
+                <div style="margin-bottom: 30px;">
+                    <p>Once 18 months has been achieved, you own the instrument. If returned at any time before 3 months there will be a $200 re-stocking fee. If returned after 3 months any equity in the instrument is forfeited.</p>
+                </div>
+                @for (int i = 0; i < Model.Count(); i++)
                 {
-                    <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                        <div class="col-lg-6">
-                            <div style="background-image: url(@Model.ElementAt(i).image); min-width: 100%; height: 100%;">
-                                <div style="min-width: 100%; background-color: black;"></div>
+                    if (i % 2 == 0)
+                    {
+                        <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                            <div class="col-lg-6">
+                                <div style="background-image: url(@Model.ElementAt(i).image); min-width: 100%; height: 555px;">
+                                    <a href=@Url.Action("Create", "Rentals", new { value = Model.ElementAt(i).instrumentID })>Click me</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="bg-black text-center h-100 project">
-                                <div class="d-flex h-100">
-                                    <div class="project-text w-100 my-auto text-center text-lg-left">
-                                        <h4 class="text-white">Misty</h4>
-                                        <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
-                                        <hr class="d-none d-lg-block mb-0 ml-0">
+                            <div class="col-lg-6">
+                                <div class="bg-black text-center h-100 project">
+                                    <div class="d-flex h-100">
+                                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                                            <h4 class="text-white">Misty</h4>
+                                            <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                            <hr class="d-none d-lg-block mb-0 ml-0">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                }
-                else
-                {
-                    <div class="row justify-content-center no-gutters">
-                        <div class="col-lg-6">
-                            <a href=@Url.Action("Create", "Rentals", new { value = Model.ElementAt(i).instrumentID })>
-                                <img style="min-width: 100%;" class="img-fluid" src="@Model.ElementAt(i).image" alt="">
-                            </a>
-                        </div>
-                        <div class="col-lg-6 order-lg-first">
-                            <div class="bg-black text-center h-100 project">
-                                <div class="d-flex h-100">
-                                    <div class="project-text w-100 my-auto text-center text-lg-right">
-                                        <h4 class="text-white">Mountains</h4>
-                                        <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
-                                        <hr class="d-none d-lg-block mb-0 mr-0">
+                    }
+                    else
+                    {
+                        <div class="row justify-content-center no-gutters">
+                            <div class="col-lg-6">
+                                <a href=@Url.Action("Create", "Rentals", new { value = Model.ElementAt(i).instrumentID })>
+                                    <img style="min-width: 100%;" class="img-fluid" src="@Model.ElementAt(i).image" alt="">
+                                </a>
+                            </div>
+                            <div class="col-lg-6 order-lg-first">
+                                <div class="bg-black text-center h-100 project">
+                                    <div class="d-flex h-100">
+                                        <div class="project-text w-100 my-auto text-center text-lg-right">
+                                            <h4 class="text-white">Mountains</h4>
+                                            <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                                            <hr class="d-none d-lg-block mb-0 mr-0">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    }
                 }
-             }
+            </div>
         </div>
     </section>
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="~/Content/js/grayscale.min.js"></script>
 </body>
 </html>

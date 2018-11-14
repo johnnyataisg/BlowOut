@@ -13,7 +13,6 @@ namespace BlowOut.Controllers
 {
     public class RentalsController : Controller
     {
-        static Instrument instrument = new Instrument();
         private BlowoutContext blowout = new BlowoutContext();
 
         // GET: Rentals
@@ -22,84 +21,41 @@ namespace BlowOut.Controllers
             return View(blowout.Products.ToArray());
         }
 
-        public ActionResult Create()
+        [HttpGet]
+        public ActionResult Create(int value)
         {
             return View();
         }
         
-        public ActionResult Instrument(string value)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "clientID,firstName,lastName,address,city,state,zip,email,phone")] Client client, int value)
         {
-            if (value == "Trumpet")
+            if (ModelState.IsValid)
             {
-                instrument.Name = "Trumpet";
-                instrument.ImageURL = "../Content/trumpet.jpg";
-                instrument.NewPrice = 55;
-                instrument.UsedPrice = 25;
-            }
-            else if (value == "Trombone")
-            {
-                instrument.Name = "Trombone";
-                instrument.ImageURL = "../Content/trombone.jpg";
-                instrument.NewPrice = 60;
-                instrument.UsedPrice = 35;
-            }
-            else if (value == "Tuba")
-            {
-                instrument.Name = "Tuba";
-                instrument.ImageURL = "../Content/tuba.jpg";
-                instrument.NewPrice = 70;
-                instrument.UsedPrice = 50;
-            }
-            else if (value == "Flute")
-            {
-                instrument.Name = "Flute";
-                instrument.ImageURL = "../Content/flute.jpg";
-                instrument.NewPrice = 40;
-                instrument.UsedPrice = 25;
-            }
-            else if (value == "Clarinet")
-            {
-                instrument.Name = "Clarinet";
-                instrument.ImageURL = "../Content/clarinet.jpg";
-                instrument.NewPrice = 35;
-                instrument.UsedPrice = 27;
-            }
-            else
-            {
-                instrument.Name = "Saxophone";
-                instrument.ImageURL = "../Content/saxophone.jpg";
-                instrument.NewPrice = 42;
-                instrument.UsedPrice = 30;
-            }
-            instrument.Price = instrument.NewPrice;
-            ViewBag.Output += "<div>";
-            ViewBag.Logo += instrument.ImageURL;
-            ViewBag.Output += "<h3>" + instrument.Name + "</h3>";
-            ViewBag.Output += "<h3>Price: $" + instrument.Price + "/month</h3>";
-            ViewBag.Output += "</div>";
-            return View();
-        }
+                blowout.Clients.Add(client);
+                blowout.SaveChanges();
 
-        public ActionResult New()
-        {
-            instrument.Price = instrument.NewPrice;
-            ViewBag.Output += "<div>";
-            ViewBag.Logo += instrument.ImageURL;
-            ViewBag.Output += "<h3>" + instrument.Name + "</h3>";
-            ViewBag.Output += "<h3>Price: $" + instrument.Price + "/month</h3>";
-            ViewBag.Output += "</div>";
-            return View("Instrument");
-        }
+                List<Product> products = blowout.Products.ToList();
+                Product instrument = new Product();
+                foreach(Product item in products)
+                {
+                    if (item.instrumentID == value)
+                    {
+                        instrument = item;
+                    }
+                }
+                ViewBag.Output += "<h3>Thank you " + client.firstName + " " + client.lastName + " for your purchase</h3>";
+                ViewBag.Output += "<h3>Order ID: " + client.clientID + "</h3>";
+                ViewBag.Output += "<h3>Instrument Purchased: " + instrument.desc + "</h3>";
+                ViewBag.Output += "<h3>Instument Type: " + instrument.type + "</h3>";
+                ViewBag.Output += "<h3>Monthly Price: $" + instrument.price + "</h3>";
+                ViewBag.Output += "<h3>Total payment after 18 months: $" + instrument.price * 18 + "</h3>";
+                ViewBag.Output += "<img src=\"" + instrument.image + "\"/>";
+                return View("Confirmation");
+            }
 
-        public ActionResult Used()
-        {
-            instrument.Price = instrument.UsedPrice;
-            ViewBag.Output += "<div>";
-            ViewBag.Logo += instrument.ImageURL;
-            ViewBag.Output += "<h3>" + instrument.Name + "</h3>";
-            ViewBag.Output += "<h3>Price: $" + instrument.Price + "/month</h3>";
-            ViewBag.Output += "</div>";
-            return View("Instrument");
+            return View(client);
         }
     }
 }
