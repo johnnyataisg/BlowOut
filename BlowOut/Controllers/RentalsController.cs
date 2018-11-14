@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using BlowOut.DAL;
 using BlowOut.Models;
 
 namespace BlowOut.Controllers
@@ -10,9 +14,15 @@ namespace BlowOut.Controllers
     public class RentalsController : Controller
     {
         static Instrument instrument = new Instrument();
+        private BlowoutContext blowout = new BlowoutContext();
 
         // GET: Rentals
         public ActionResult Index()
+        {
+            return View(blowout.Products.ToArray());
+        }
+
+        public ActionResult Create()
         {
             return View();
         }

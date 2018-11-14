@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="~/Content/css/grayscale.min.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet" />
 </head>
 <body id="page-top">
     <!-- Navigation -->
@@ -46,12 +47,14 @@
     </nav>
     <!-- Header -->
     <header class="masthead">
-        <div class="container d-flex h-100 align-items-center">
-            <div class="mx-auto text-center">
-                <h1 class="mx-auto my-0 text-uppercase">BlowOut</h1>
-                <h2 class="text-white-50 mx-auto mt-2 mb-5">Jumpstart your musical career today with our instruments, new and used</h2>
-                <p class="text-white-50 mx-auto mt-2 mb-5">"It's easy to play any musical instrument: all you have to do is touch the right key at the right time and the instrument will play itself."<br />-Johann Sebastian Bach"</p>
-                <a href=@Url.Action("Index", "Rentals") class="btn btn-primary js-scroll-trigger">Get Started</a>
+        <div class="header-background";>
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">BlowOut</h1>
+                    <h2 style="max-width: 60rem; font-size: 27px;" class="text-white-50 mx-auto mt-2 mb-5">Jumpstart your musical career today with our instruments, new and used</h2>
+                    <p style="max-width: 60rem; font-size: 20px;" class="text-white-50 mx-auto mt-2 mb-5">"It's easy to play any musical instrument: all you have to do is touch the right key at the right time and the instrument will play itself."<br />-Johann Sebastian Bach"</p>
+                    <a href=@Url.Action("Index", "Rentals") class="btn btn-primary js-scroll-trigger">Get Started</a>
+                </div>
             </div>
         </div>
     </header>
