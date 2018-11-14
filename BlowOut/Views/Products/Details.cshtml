@@ -34,9 +34,25 @@
             @Html.DisplayFor(model => model.price)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientID)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.productID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.instrumentID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

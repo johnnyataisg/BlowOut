@@ -12,7 +12,7 @@ namespace BlowOut.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int productID { get; set; }
+        public int instrumentID { get; set; }
         public string desc { get; set; }
         public string type { get; set; }
         public string price { get; set; }
