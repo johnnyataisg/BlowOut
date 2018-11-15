@@ -163,6 +163,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\585788287-classical-music-wallpaper.jpg" />
+    <Content Include="Content\5acb18cd793db.jpg" />
+    <Content Include="Content\about.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -171,6 +174,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\clarinet.jpg" />
     <Content Include="Content\classical.jpg" />
+    <Content Include="Content\contact.jpg" />
     <Content Include="Content\css\grayscale.css" />
     <Content Include="Content\css\grayscale.min.css" />
     <Content Include="Content\DF3BBFBAC0EB418EAA55B39BBDE6691D_12073_2787x2296_b0d03a194b23e7cf85e62e1a36a7c1ab.jpg" />
@@ -1714,7 +1718,6 @@
     <Content Include="Views\Contact\Email.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Rentals\Index.cshtml" />
-    <Content Include="Views\Rentals\Instrument.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />

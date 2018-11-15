@@ -25,7 +25,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">BlowOut Musical Instrument Rentals</a>
+            <a class="navbar-brand js-scroll-trigger" href=@Url.Action("Index", "Home")>BlowOut Musical Instrument Rentals</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
@@ -39,7 +39,7 @@
                         <a class="nav-link js-scroll-trigger" href=@Url.Action("About", "Home")>About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href=@Url.Action("Index", "Contact")>Contact</a>
+                        <a class="nav-link js-scroll-trigger" href=@Url.Action("Contact", "Home")>Contact</a>
                     </li>
                 </ul>
             </div>
@@ -51,11 +51,11 @@
             {
                 @Html.AntiForgeryToken()
 
-                <div class="form-horizontal" style="padding-top:8%;">
-                    <h4 style="margin-left: 20px;">Create Client</h4>
+                <div class="form-horizontal" style="padding-top:8%; padding-left: 30px;">
+                    <h4 style="margin-left: 20px;">Create Customer Profile</h4>
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
+                    <div class="form-group form-fifty">
                         @Html.LabelFor(model => model.firstName, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.firstName, new { htmlAttributes = new { @class = "form-control" } })
@@ -63,7 +63,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-fifty">
                         @Html.LabelFor(model => model.lastName, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.lastName, new { htmlAttributes = new { @class = "form-control" } })
@@ -71,7 +71,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-fifty">
                         @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
@@ -79,7 +79,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-fifty">
                         @Html.LabelFor(model => model.city, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form-control" } })
@@ -87,7 +87,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-fifty">
                         @Html.LabelFor(model => model.state, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.state, new { htmlAttributes = new { @class = "form-control" } })
@@ -95,7 +95,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-fifty">
                         @Html.LabelFor(model => model.zip, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.zip, new { htmlAttributes = new { @class = "form-control" } })
@@ -103,7 +103,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-fifty">
                         @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
@@ -111,7 +111,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-fifty">
                         @Html.LabelFor(model => model.phone, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control" } })
@@ -119,7 +119,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-fifty">
                         <div class="col-md-offset-2 col-md-10" style="padding-top: 20px; padding-bottom: 40px;">
                             <input type="submit" value="Create" class="btn btn-primary js-scroll-trigger" />
                         </div>

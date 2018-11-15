@@ -49,18 +49,18 @@
 
         #mainNav .navbar-brand {
             padding: .5rem 0;
-            color: rgba(255,255,255,.5)
+            color: rgb(255, 255, 255);
         }
 
         #mainNav .nav-link {
             -webkit-transition: none;
             transition: none;
             padding: 2rem 1.5rem;
-            color: rgba(255,255,255,.5)
+            color: rgb(255, 255, 255);
         }
 
             #mainNav .nav-link:hover {
-                color: rgba(255,255,255,.75)
+                color: rgb(255, 255, 255);
             }
 
             #mainNav .nav-link:active {
@@ -179,9 +179,10 @@
     }
 
 .about-section {
+    height: 100%;
     padding-top: 10rem;
     background: -webkit-gradient(linear,left top,left bottom,from(#161616),color-stop(75%,rgba(22,22,22,.9)),to(rgba(22,22,22,.8)));
-    background: linear-gradient(to bottom,#161616 0,rgba(22,22,22,.9) 75%,rgba(22,22,22,.8) 100%)
+    background: linear-gradient(to bottom,#1616165e 0,rgba(22, 22, 22, 0.58) 75%,rgba(22, 22, 22, 0.9) 100%);
 }
 
     .about-section p {

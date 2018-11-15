@@ -52,3 +52,21 @@
 .coolbutton:hover .button {
     opacity: 1;
 }
+
+.picture-button {
+    margin-top: 40%;
+    background-color: white;
+    border-radius: 5px;
+    width: auto;
+    color: black;
+    line-height: 22px;
+}
+
+.picture-button:hover {
+    background-color: rgb(171, 232, 230);
+    transition-duration: 0.4s;
+}
+
+.form-fifty {
+    width: 50%;
+}
