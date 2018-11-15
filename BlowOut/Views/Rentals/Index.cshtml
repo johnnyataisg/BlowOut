@@ -49,7 +49,7 @@
     </nav>
     <!-- Projects Section -->
     <section class="rental-style" style="background-image: url(../Content/585788287-classical-music-wallpaper.jpg); background-size: contain; background-repeat: repeat;">
-        <div class="rental-background" style="padding-top: 10%;">
+        <div class="rental-background" style="padding-top: 10%; padding-bottom: 10%;">
             <div style="margin-bottom: 50px;">
                 <h1 style="text-align: center;">Instrument Rentals</h1>
             </div>
@@ -75,8 +75,8 @@
                                 <div class="bg-black text-center h-100 project">
                                     <div class="d-flex h-100">
                                         <div style="padding-left: 15px; padding-right: 15px;" class="project-text w-100 my-auto text-center">
-                                            <h4 class="text-white">Misty</h4>
-                                            <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                            <h4 class="text-white">@Model.ElementAt(i).desc</h4>
+                                            <p class="mb-0 text-white-50">New: $@Model.ElementAt(i).price Used: $@Model.ElementAt(i + 1).price</p>
                                             <hr class="d-none d-lg-block mb-0 ml-0">
                                         </div>
                                     </div>
@@ -100,8 +100,8 @@
                                 <div class="bg-black text-center h-100 project">
                                     <div class="d-flex h-100">
                                         <div style="padding-left: 15px; padding-right: 15px;" class="project-text w-100 my-auto text-center">
-                                            <h4 class="text-white">Mountains</h4>
-                                            <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                                            <h4 class="text-white">@Model.ElementAt(i).desc</h4>
+                                            <p class="mb-0 text-white-50">New: $@Model.ElementAt(i).price Used: $@Model.ElementAt(i + 1).price</p>
                                             <hr class="d-none d-lg-block mb-0 mr-0">
                                         </div>
                                     </div>

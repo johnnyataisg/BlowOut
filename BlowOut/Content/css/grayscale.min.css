@@ -115,9 +115,9 @@
         font-size: 2.5rem;
         line-height: 2.5rem;
         letter-spacing: .8rem;
-        background: -webkit-linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,0));
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text
+        background: -webkit-linear-gradient(rgba(255,255,255,.9),rgba(255, 255, 255, 0.52));
+        -webkit-text-fill-color: #ffffff00;
+        -webkit-background-clip: text;
     }
 
     .masthead h2 {
@@ -182,7 +182,7 @@
     height: 100%;
     padding-top: 10rem;
     background: -webkit-gradient(linear,left top,left bottom,from(#161616),color-stop(75%,rgba(22,22,22,.9)),to(rgba(22,22,22,.8)));
-    background: linear-gradient(to bottom,#1616165e 0,rgba(22, 22, 22, 0.58) 75%,rgba(22, 22, 22, 0.9) 100%);
+    background: linear-gradient(to bottom,#1616165e 0,rgba(22, 22, 22, 0.8) 75%,rgb(22, 22, 22) 100%);
 }
 
     .about-section p {
@@ -223,12 +223,12 @@
 
 .signup-section {
     padding: 10rem 0;
-    background: -webkit-gradient(linear,left top,left bottom,from(rgba(22,22,22,.1)),color-stop(75%,rgba(22,22,22,.5)),to(#161616)),url(../img/bg-signup.jpg);
-    background: linear-gradient(to bottom,rgba(22,22,22,.1) 0,rgba(22,22,22,.5) 75%,#161616 100%),url(../img/bg-signup.jpg);
+    background: -webkit-gradient(linear,left top,left bottom,from(rgba(22,22,22,.1)),color-stop(75%,rgba(22,22,22,.5)),to(#161616)),url(../photo-1475744214834-0cb9be6eb226.jfif);
+    background: linear-gradient(to bottom,rgba(22,22,22,.1) 0,rgba(22,22,22,.5) 75%,#161616 100%),url(../photo-1475744214834-0cb9be6eb226.jfif);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-size: cover
+    background-size: cover;
 }
 
     .signup-section .form-inline input {
