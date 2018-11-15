@@ -28,7 +28,7 @@ namespace BlowOut.Models
         [Required(ErrorMessage = "Please enter your city")]
         [DisplayName("City")]
         public string city { get; set; }
-        [Required(ErrorMessage ="Please enter your state")]
+        [Required(ErrorMessage = "Please enter your state")]
         [DisplayName("State")]
         public string state { get; set; }
         [Required(ErrorMessage = "Please enter your zip code")]
@@ -43,5 +43,9 @@ namespace BlowOut.Models
         [StringLength(10, MinimumLength = 10, ErrorMessage = "Please enter a valid phone number")]
         [DisplayName("Phone Number")]
         public string phone { get; set; }
+
+        [ForeignKey("Product")]
+        public virtual int? instrumentID { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

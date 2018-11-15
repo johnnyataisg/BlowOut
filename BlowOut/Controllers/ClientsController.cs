@@ -18,7 +18,8 @@ namespace BlowOut.Controllers
         // GET: Clients
         public ActionResult Index()
         {
-            return View(db.Clients.ToList());
+            var clients = db.Clients.Include(c => c.Product);
+            return View(clients.ToList());
         }
 
         // GET: Clients/Details/5
@@ -39,6 +40,7 @@ namespace BlowOut.Controllers
         // GET: Clients/Create
         public ActionResult Create()
         {
+            ViewBag.instrumentID = new SelectList(db.Products, "instrumentID", "desc");
             return View();
         }
 
@@ -47,7 +49,7 @@ namespace BlowOut.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "clientID,firstName,lastName,address,city,state,zip,email,phone")] Client client)
+        public ActionResult Create([Bind(Include = "clientID,firstName,lastName,address,city,state,zip,email,phone,instrumentID")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +58,7 @@ namespace BlowOut.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.instrumentID = new SelectList(db.Products, "instrumentID", "desc", client.instrumentID);
             return View(client);
         }
 
@@ -71,6 +74,7 @@ namespace BlowOut.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.instrumentID = new SelectList(db.Products, "instrumentID", "desc", client.instrumentID);
             return View(client);
         }
 
@@ -79,7 +83,7 @@ namespace BlowOut.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "clientID,firstName,lastName,address,city,state,zip,email,phone")] Client client)
+        public ActionResult Edit([Bind(Include = "clientID,firstName,lastName,address,city,state,zip,email,phone,instrumentID")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +91,7 @@ namespace BlowOut.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.instrumentID = new SelectList(db.Products, "instrumentID", "desc", client.instrumentID);
             return View(client);
         }
 

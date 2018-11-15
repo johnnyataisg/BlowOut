@@ -33,6 +33,7 @@ namespace BlowOut.Controllers
         {
             if (ModelState.IsValid)
             {
+                client.instrumentID = value;
                 blowout.Clients.Add(client);
                 blowout.SaveChanges();
 

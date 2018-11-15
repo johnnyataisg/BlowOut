@@ -70,3 +70,9 @@
 .form-fifty {
     width: 50%;
 }
+
+.form-title {
+    flex: 0 0 16.666667%;
+    max-width: 100%;
+    padding-left: 15px;
+}
