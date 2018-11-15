@@ -179,7 +179,7 @@
     }
 
 .about-section {
-    height: 100%;
+    min-height: 100%;
     padding-top: 10rem;
     background: -webkit-gradient(linear,left top,left bottom,from(#161616),color-stop(75%,rgba(22,22,22,.9)),to(rgba(22,22,22,.8)));
     background: linear-gradient(to bottom,#1616165e 0,rgba(22, 22, 22, 0.8) 75%,rgb(22, 22, 22) 100%);
