@@ -46,14 +46,16 @@ namespace BlowOut.Controllers
                         instrument = item;
                     }
                 }
-                ViewBag.Output += "<h3>Thank you " + client.firstName + " " + client.lastName + " for your purchase</h3>";
-                ViewBag.Output += "<h3>Order ID: " + client.clientID + "</h3>";
-                ViewBag.Output += "<h3>Instrument Purchased: " + instrument.desc + "</h3>";
-                ViewBag.Output += "<h3>Instument Type: " + instrument.type + "</h3>";
-                ViewBag.Output += "<h3>Monthly Price: $" + instrument.price + "</h3>";
-                ViewBag.Output += "<h3>Total payment after 18 months: $" + instrument.price * 18 + "</h3>";
-                ViewBag.Output += "<img src=\"" + instrument.image + "\"/>";
-                return View("Confirmation");
+                ViewBag.Output += "<h5>Thank you " + client.firstName + " " + client.lastName + " for your purchase</h5>";
+                ViewBag.Output += "<h5>Order ID: " + client.clientID + "</h5>";
+                ViewBag.Output += "<h5>Instrument Purchased: " + instrument.desc + "</h5>";
+                ViewBag.Output += "<h5>Instument Type: " + instrument.type + "</h5>";
+                ViewBag.Output += "<h5>Monthly Price: $" + instrument.price + "</h5>";
+                ViewBag.Output += "<h5>Total payment after 18 months: $" + instrument.price * 18 + "</h5>";
+                ViewBag.Output += "<div style=\"padding-top: 5%;\">";
+                ViewBag.Output += "<img style=\"border-radius: 50%;\" src=\"" + instrument.image + "\"/>";
+                ViewBag.Output += "</div>";
+                return View("Confirmation"); 
             }
 
             return View(client);

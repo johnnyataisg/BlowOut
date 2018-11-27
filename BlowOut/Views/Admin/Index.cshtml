@@ -1,4 +1,4 @@
-﻿
+﻿@model BlowOut.Models.Login
 @{
     Layout = null;
 }
@@ -7,12 +7,11 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Order Confirmation</title>
+    <title>Index</title>
     <!-- Bootstrap core CSS -->
     <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
@@ -49,10 +48,41 @@
             </div>
         </div>
     </nav>
-    <section class="rental-style" style="background-image: url(../Content/violindark.jpg); background-size: contain; background-repeat: repeat;">
-        <div class="rental-background" style="padding-top: 10%; padding-bottom: 5%; padding-left:5%; height: 100%; width: 100%;">
-            @Html.Raw((String)ViewBag.Output)
+    <section class="admin-page-index rental-style" style="background-image: url(../Content/admin.jpg); background-size: cover; background-repeat: repeat;">
+        <div div class="rental-background" style="padding-top: 8%; padding-bottom: 5%;">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal" style="padding-left: 30px;">
+                    <h4 style="margin-left: 20px;">Authenticate Login Information</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group form-fifty">
+                        <label class="control-label form-title">Username</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", placeholder = "Username", style = "width: 50%;" } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group form-fifty">
+                        <label class="control-label form-title">Password</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password", style = "width: 50%;" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group form-fifty">
+                        <div class="col-md-offset-2 col-md-10" style="padding-top: 20px; padding-bottom: 40px;">
+                            <input type="submit" value="Submit" class="btn btn-primary js-scroll-trigger" />
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
+
     </section>
 </body>
 </html>
