@@ -1,7 +1,50 @@
-﻿
+﻿@using BlowOut.Models
+@model IEnumerable<FullOrder>
+
 @{
-    ViewBag.Title = "DisplayAll";
+    ViewBag.Title = "Display All Orders";
 }
 
-<h2>DisplayAll</h2>
+<link href="~/Content/style.css" type="text/css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Content/main.js"></script>
+
+<h2>Order Details</h2>
+<div>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>Order ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Email Address</th>
+            <th>Phone Number</th>
+            <th>Instrument</th>
+            <th>New/Used</th>
+            <th>Price</th>
+        </tr>
+        @foreach (FullOrder fullOrder in Model)
+        {
+            <tr class="table-row">
+                <td>@fullOrder.ClientID</td>
+                <td>@fullOrder.FirstName</td>
+                <td>@fullOrder.LastName</td>
+                <td>@fullOrder.Address</td>
+                <td>@fullOrder.City</td>
+                <td>@fullOrder.State</td>
+                <td>@fullOrder.Zip</td>
+                <td>@fullOrder.Email</td>
+                <td>@fullOrder.Phone</td>
+                <td>@fullOrder.Description</td>
+                <td>@fullOrder.Type</td>
+                <td>@fullOrder.Price</td>
+            </tr>
+        }
+    </table>
+    <button id="button" class="btn btn-primary">Test</button>
+</div>
 

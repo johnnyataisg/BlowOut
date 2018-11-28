@@ -179,6 +179,7 @@
     <Content Include="Content\contact.jpg" />
     <Content Include="Content\css\grayscale.css" />
     <Content Include="Content\css\grayscale.min.css" />
+    <Content Include="Content\Datatable.css" />
     <Content Include="Content\DF3BBFBAC0EB418EAA55B39BBDE6691D_12073_2787x2296_b0d03a194b23e7cf85e62e1a36a7c1ab.jpg" />
     <Content Include="Content\flute.jpg" />
     <Content Include="Content\img\bg-masthead.jpg" />
@@ -188,6 +189,7 @@
     <Content Include="Content\img\ipad.png" />
     <Content Include="Content\js\grayscale.js" />
     <Content Include="Content\js\grayscale.min.js" />
+    <Content Include="Content\main.js" />
     <Content Include="Content\photo-1475744214834-0cb9be6eb226.jfif" />
     <Content Include="Content\saxophone.jpg" />
     <Content Include="Content\style.css" />

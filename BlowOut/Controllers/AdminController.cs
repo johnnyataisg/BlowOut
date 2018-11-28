@@ -43,9 +43,27 @@ namespace BlowOut.Controllers
 
         public ActionResult DisplayAll()
         {
-            List<Client> allClients = db.Clients.ToList();
-
-            return View();
+            List<FullOrder> allOrders = new List<FullOrder>();
+            foreach (Client client in db.Clients.ToList())
+            {
+                Product product = db.Products.Where(instrument => instrument.instrumentID == client.instrumentID).FirstOrDefault();
+                allOrders.Add(new FullOrder
+                {
+                    ClientID = client.clientID,
+                    FirstName = client.firstName,
+                    LastName = client.lastName,
+                    Address = client.address,
+                    City = client.city,
+                    State = client.state,
+                    Zip = client.zip,
+                    Email = client.email,
+                    Phone = client.phone,
+                    Description = product.desc,
+                    Type = product.type,
+                    Price = product.price
+                });
+            }
+            return View(allOrders);
         }
     }
 }

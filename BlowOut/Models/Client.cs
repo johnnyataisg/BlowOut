@@ -26,7 +26,7 @@ namespace BlowOut.Models
         [DisplayName("Street Address")]
         public string address { get; set; }
         [Required(ErrorMessage = "Please enter your city")]
-        [RegularExpression(@"^[A-Z][a-z]*", ErrorMessage = "Please enter a valid city")]
+        [RegularExpression(@"^[A-Z][a-z]*([\s][A-Z][a-z]*)*", ErrorMessage = "Please enter a valid city")]
         [DisplayName("City")]
         public string city { get; set; }
         [Required(ErrorMessage = "Please enter your state")]

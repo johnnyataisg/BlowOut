@@ -81,3 +81,19 @@
     width: 100%;
     min-height: 60rem;
 }
+
+.col-2nd {
+    padding-left: 20px;
+}
+
+.table-row {
+
+}
+
+.highlighted {
+    background-color: #B0BED9
+}
+
+.oddrow {
+    background-color: #cccccc14;
+}
