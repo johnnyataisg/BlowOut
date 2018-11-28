@@ -7,10 +7,22 @@
         $(this).toggleClass("oddrow");
         $(this).toggleClass("highlighted");
     });
-
+    
     $('#button').on("click", function () {
+        var idList = new Array();
         $(".highlighted td:first-child").each(function () {
-            alert($(this).text());
+            idList.push($(this).text());
+        });
+        $.ajax({
+            type: "GET",
+            url: "/Admin/SaveList",
+            data: { values: idList },
+            success: function (data) {
+                alert(data.Result);
+            },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            traditional: true
         });
     });
 

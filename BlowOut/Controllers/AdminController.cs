@@ -65,5 +65,10 @@ namespace BlowOut.Controllers
             }
             return View(allOrders);
         }
+
+        public ActionResult SaveList(string[] values)
+        {
+            return Json(new { Result = string.Format("First item in list: '{0}'", values[0]) });
+        }
     }
 }
