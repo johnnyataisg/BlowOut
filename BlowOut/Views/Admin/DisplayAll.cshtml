@@ -3,48 +3,106 @@
 
 @{
     ViewBag.Title = "Display All Orders";
+    Layout = null;
 }
 
-<link href="~/Content/style.css" type="text/css" rel="stylesheet" />
-<script src="~/Scripts/jquery-3.3.1.min.js"></script>
-<script src="~/Content/main.js"></script>
-
-<h2>Order Details</h2>
-<div>
-    <hr />
-    <table class="table">
-        <tr>
-            <th>Order ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip</th>
-            <th>Email Address</th>
-            <th>Phone Number</th>
-            <th>Instrument</th>
-            <th>New/Used</th>
-            <th>Price</th>
-        </tr>
-        @foreach (FullOrder fullOrder in Model)
-        {
-            <tr class="table-row">
-                <td>@fullOrder.ClientID</td>
-                <td>@fullOrder.FirstName</td>
-                <td>@fullOrder.LastName</td>
-                <td>@fullOrder.Address</td>
-                <td>@fullOrder.City</td>
-                <td>@fullOrder.State</td>
-                <td>@fullOrder.Zip</td>
-                <td>@fullOrder.Email</td>
-                <td>@fullOrder.Phone</td>
-                <td>@fullOrder.Description</td>
-                <td>@fullOrder.Type</td>
-                <td>@fullOrder.Price</td>
-            </tr>
-        }
-    </table>
-    <button id="button" class="btn btn-primary">Test</button>
-</div>
-
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Index</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/Content/css/grayscale.min.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/main.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href=@Url.Action("Index", "Home")>BlowOut Musical Instrument Rentals</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href=@Url.Action("Index", "Rentals")>Rentals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href=@Url.Action("About", "Home")>About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href=@Url.Action("Contact", "Home")>Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href=@Url.Action("Index", "Admin")>Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="display-page rental-style">
+        <div style="padding-top: 10%; padding-bottom: 5%; margin-left: 30px; margin-right: 30px;">
+            <div class="datatable-container">
+                <h2 style="padding-top: 20px; padding-left: 20px;">Order Details</h2>
+                <div style="padding-top: 20px; padding-left: 20px;">
+                    <hr />
+                    <table class="table">
+                        <tr style="font-size: 12px; color: white;">
+                            <th>Order ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Address</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zip</th>
+                            <th>Email Address</th>
+                            <th>Phone Number</th>
+                            <th>Instrument</th>
+                            <th>New/Used</th>
+                            <th>Price</th>
+                            <th></th>
+                        </tr>
+                        @foreach (FullOrder fullOrder in Model)
+                        {
+                            <tr class="table-row" style="font-size: 12px; color: white;">
+                                <td>@fullOrder.ClientID</td>
+                                <td>@fullOrder.FirstName</td>
+                                <td>@fullOrder.LastName</td>
+                                <td>@fullOrder.Address</td>
+                                <td>@fullOrder.City</td>
+                                <td>@fullOrder.State</td>
+                                <td>@fullOrder.Zip</td>
+                                <td>@fullOrder.Email</td>
+                                <td>@fullOrder.Phone</td>
+                                <td>@fullOrder.Description</td>
+                                <td>@fullOrder.Type</td>
+                                <td>@fullOrder.Price</td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = fullOrder.ClientID }) |
+                                    @Html.ActionLink("Details", "Details", new { id = fullOrder.ClientID })
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                    <button id="button" style="margin-top: 20px; margin-bottom: 30px;" class="btn btn-primary btn-sm">Delete Selected Orders</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="~/Content/js/grayscale.min.js"></script>
+</body>

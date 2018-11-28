@@ -90,10 +90,26 @@
 
 }
 
+.hovered {
+    background-color: rgba(135, 135, 135, 0.74);
+}
+
 .highlighted {
-    background-color: #B0BED9
+    background-color: rgba(140, 151, 171, 0.80);
 }
 
 .oddrow {
     background-color: #cccccc14;
+}
+
+.display-page {
+    background-image: url(../Content/admin.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 60rem;
+}
+
+.datatable-container {
+    background-color: rgba(50, 50, 50, 0.50);
+    border-radius: 5px;
 }
