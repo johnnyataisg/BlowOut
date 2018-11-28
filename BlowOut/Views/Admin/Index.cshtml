@@ -48,8 +48,8 @@
             </div>
         </div>
     </nav>
-    <section class="admin-page-index rental-style" style="background-image: url(../Content/admin.jpg); background-size: cover; background-repeat: repeat;">
-        <div div class="rental-background" style="padding-top: 8%; padding-bottom: 5%;">
+    <section class="admin-page-index rental-style" style="min-height: 60rem; background-image: url(../Content/admin.jpg); background-size: cover; background-repeat: repeat;">
+        <div div class="rental-background" style="height: 100%; padding-top: 8%; padding-bottom: 5%;">
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
@@ -82,7 +82,15 @@
                 </div>
             }
         </div>
-
     </section>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="~/Content/js/grayscale.min.js"></script>
 </body>
 </html>

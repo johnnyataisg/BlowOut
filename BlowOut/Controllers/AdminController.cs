@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BlowOut.DAL;
 using BlowOut.Models;
 
 namespace BlowOut.Controllers
 {
     public class AdminController : Controller
     {
+        private BlowoutContext db = new BlowoutContext();
+
         // GET: Admin
         [HttpGet]
         public ActionResult Index()
@@ -40,6 +43,8 @@ namespace BlowOut.Controllers
 
         public ActionResult DisplayAll()
         {
+            List<Client> allClients = db.Clients.ToList();
+
             return View();
         }
     }
