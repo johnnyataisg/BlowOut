@@ -4,7 +4,6 @@
     });
 
     $(".table-row:odd").on("click", function () {
-        $(this).toggleClass("oddrow");
         $(this).toggleClass("highlighted");
     });
 

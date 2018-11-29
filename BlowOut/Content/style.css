@@ -92,10 +92,11 @@
 
 .hovered {
     background-color: rgba(135, 135, 135, 0.74);
+    cursor: pointer;
 }
 
 .highlighted {
-    background-color: rgba(140, 151, 171, 0.80);
+    background-color: rgba(140, 151, 171, 0.80) !important;
 }
 
 .oddrow {
