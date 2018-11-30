@@ -50,17 +50,9 @@
     <section class="display-page rental-style">
         <div style="padding-top: 10%; padding-bottom: 5%; margin-left: 30px; margin-right: 30px;">
             <div>
-                <h4>Client Details</h4>
+                <h4>Order Details</h4>
                 <hr />
                 <dl class="dl-horizontal">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Product.desc)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Product.desc)
-                    </dd>
-
                     <dt>
                         @Html.DisplayNameFor(model => model.firstName)
                     </dt>
@@ -125,6 +117,21 @@
                         @Html.DisplayFor(model => model.phone)
                     </dd>
 
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Product.desc)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Product.desc)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Product.type)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Product.type)
+                    </dd>
                 </dl>
             </div>
             <p>

@@ -32,7 +32,7 @@ namespace BlowOut.Controllers
             {
                 if (user.Username == "Missouri" && user.Password == "ShowMe")
                 {
-                    return RedirectToAction("DisplayAll");
+                    return RedirectToAction("UpdateData");
                 }
                 else
                 {
@@ -43,7 +43,7 @@ namespace BlowOut.Controllers
             }
         }
 
-        public ActionResult DisplayAll()
+        public ActionResult UpdateData()
         {
             List<FullOrder> allOrders = new List<FullOrder>();
             foreach (Client client in db.Clients.ToList())
